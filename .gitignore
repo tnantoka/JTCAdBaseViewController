@@ -18,3 +18,5 @@ DerivedData
 .idea/
 .com.apple.timemachine.supported
 DB/.com.apple.timemachine.supported
+*~
+.*.sw*
