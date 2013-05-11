@@ -214,7 +214,7 @@
     _gAdBannerView.delegate = self;
     GADRequest *request = [GADRequest request];
 #ifdef DEBUG
-    request.testDevices = [NSArray arrayWithObjects:@"GAD_SIMULATOR_ID", nil];
+    request.testing = YES;
 #endif
     [_gAdBannerView loadRequest:request];
 }
