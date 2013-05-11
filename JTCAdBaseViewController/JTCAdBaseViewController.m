@@ -212,7 +212,11 @@
         _gAdBannerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     }
     _gAdBannerView.delegate = self;
-    [_gAdBannerView loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+#ifdef DEBUG
+    request.testDevices = [NSArray arrayWithObjects:@"GAD_SIMULATOR_ID", nil];
+#endif
+    [_gAdBannerView loadRequest:request];
 }
 -(void) destroyGADView {
     [_gAdBannerView removeFromSuperview];
